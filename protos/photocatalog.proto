@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+service PhotoCatalogService {
+    rpc Photo(IdRequest) returns (PhotoResponse);
+    rpc AddPhoto(PhotoRequest) returns (PhotoResponse);
+    rpc RandomPhotos(CountRequest) returns (stream PhotoResponse);
+    rpc AddPhotos(stream PhotoRequest) returns (UploadStatusResponse);
+}
+message IdRequest {
+    optional string id = 1;
+}
+message CountRequest {
+    optional uint32 count = 1;
+}
+message PhotoRequest {
+    optional string description = 1;
+    optional string content = 2;
+}
+message PhotoResponse {
+    optional string id = 1;
+    optional string description = 2;
+    optional google.protobuf.Timestamp timestamp = 3;
+    optional string content = 4;
+}
+message UploadStatusResponse {
+    optional bool success = 1;
+    optional string message = 2;
+    repeated string uploaded_ids = 3;
+}
