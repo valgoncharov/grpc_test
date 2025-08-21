@@ -1,0 +1,25 @@
+[project]
+name = "qaguru-grpc"
+version = "0.1.0"
+description = "HomeWork"
+authors = [
+    {name = "valgoncharov",email = "99090572+valgoncharov@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pbreflect = "^1.0.2"
+pytest = "^8.4.1"
+allure-pytest = "^2.14.3"
+pydantic-settings = "^2.10.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = "--alluredir=../allure-results"
