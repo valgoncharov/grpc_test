@@ -1,7 +1,6 @@
 # grpc_test
 
 ## Автотесты на Python по проекту Niffler
-<img src="/niffler-ng-client/src/assets/images/niffler-with-a-coin.png" width="250">
 
 
 <details>
@@ -47,7 +46,14 @@
 </p>
 
 ## Как запустить
-
+```
+Перейти в каталог python_test:
+cd python_test
+```
+```
+В консоли выполнить команду:
+pytest --alluredir=[your_path_for_report] --clean-alluredir ./test
+```
 ## Локально, на хосте
 
 Перед выполнением необходимо:
@@ -63,15 +69,3 @@
     - KAFKA_ADDRESS
     - SOAP_ADDRESS
     - GRPC_HOST
-
-```
-Перейти в каталог python_test:
-cd python_test
-```
-
-
-#### Запуск с последовательным выполнением
-```
-В консоли выполнить команду:
-pytest --alluredir=[your_path_for_report] --clean-alluredir ./test
-```
